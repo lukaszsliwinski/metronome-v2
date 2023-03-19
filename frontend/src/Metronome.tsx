@@ -1,13 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+// import audio files
+import click1 from './assets/click1.mp3';
+import click2 from './assets/click2.mp3';
 
 export default function Metronome() {
-  // local state
+  // component state
   const [tempo, setTempo] = useState(135);
   const [description, setDescription] = useState('Vivace');
   const [beats, setBeats] = useState(4);
   const [notes, setNotes] = useState(4);
   const [counter, setCounter] = useState(1);
   const [playing, setPlaying] = useState(false);
+
+  // ref to audio element
+  let click = useRef<HTMLAudioElement>(null);
 
   // set description when tempo changes
   useEffect(() => {
@@ -57,15 +64,11 @@ export default function Metronome() {
   };
 
   // play click function
-  const click = () => {
-    if (counter === 1) {
-      // play audio click...
-      console.log('click1')
-    } else {
-      // play audio click...
-      console.log('click2')
+  const playClick = () => {
+    if (click.current) {
+      click.current.src = (counter === 1) ? click1 : click2;
+      click.current.play();
     };
-
     (counter === beats) ? setCounter(1) : setCounter(counter + 1);
   };
 
@@ -78,7 +81,7 @@ export default function Metronome() {
     // run click function in loop and adjust the time
     const round = () => {
       let drift = Date.now() - expected;
-      click();
+      playClick();
       expected += interval;
       timeout = setTimeout(round, interval - drift);
     };
@@ -130,6 +133,7 @@ export default function Metronome() {
       </div>
 
       <button onClick={() => setPlaying(!playing)}>{playing ? 'pause' : 'play'}</button>
+      <audio ref={click}></audio>
     </>
   );
 }
