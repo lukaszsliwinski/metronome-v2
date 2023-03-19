@@ -6,6 +6,8 @@ export default function Metronome() {
   const [description, setDescription] = useState('Vivace');
   const [beats, setBeats] = useState(4);
   const [notes, setNotes] = useState(4);
+  const [counter, setCounter] = useState(1);
+  const [playing, setPlaying] = useState(false);
 
   // set description when tempo changes
   useEffect(() => {
@@ -54,6 +56,46 @@ export default function Metronome() {
     };
   };
 
+  // play click function
+  const click = () => {
+    if (counter === 1) {
+      // play audio click...
+      console.log('click1')
+    } else {
+      // play audio click...
+      console.log('click2')
+    };
+
+    (counter === beats) ? setCounter(1) : setCounter(counter + 1);
+  };
+
+  // Metronome timer based on https://www.youtube.com/watch?v=x8PBWobv6NY
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    let interval = 240000 / tempo / notes;
+    let expected = Date.now() + interval;
+
+    // run click function in loop and adjust the time
+    const round = () => {
+      let drift = Date.now() - expected;
+      click();
+      expected += interval;
+      timeout = setTimeout(round, interval - drift);
+    };
+
+    // run round function and handle interval change while playing state is true
+    if (playing) {
+      expected = Date.now() + interval;
+      timeout = setTimeout(round, interval)
+    };
+
+    // stop playing
+    if (timeout !== undefined) {
+      return () => clearTimeout(timeout);
+    }
+  }, [playing, tempo, notes, counter]);
+
+
   return (
     <>
       <div className="flex">
@@ -87,6 +129,7 @@ export default function Metronome() {
         <button onClick={() => changeNotes('add')}>plus</button>
       </div>
 
+      <button onClick={() => setPlaying(!playing)}>{playing ? 'pause' : 'play'}</button>
     </>
   );
 }
