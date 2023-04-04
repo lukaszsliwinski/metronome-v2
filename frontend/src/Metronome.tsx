@@ -56,7 +56,7 @@ export default function Metronome() {
 
   // change measure - notes
   const changeNotes = (action: 'add' | 'sub') => {
-    if (action === 'add' && notes < 16) {
+    if (action === 'add' && notes < 8) {
       setNotes(notes * 2);
     } else if (action === 'sub' && notes > 1) {
       setNotes(notes / 2);
@@ -81,6 +81,9 @@ export default function Metronome() {
     // run click function in loop and adjust the time
     const round = () => {
       let drift = Date.now() - expected;
+      if (drift > interval) {
+        console.log('drift error');
+      };
       playClick();
       expected += interval;
       timeout = setTimeout(round, interval - drift);
@@ -98,6 +101,10 @@ export default function Metronome() {
     }
   }, [playing, tempo, notes, counter]);
 
+  // reset counter on every play/apuse click
+  useEffect(() => {
+    setCounter(1);
+  }, [playing]);
 
   return (
     <>
