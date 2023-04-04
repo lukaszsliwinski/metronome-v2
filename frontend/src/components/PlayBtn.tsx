@@ -1,12 +1,22 @@
+// imports
+import { useSelector, useDispatch } from 'react-redux';
+
 // icons
 import { ReactComponent as Play } from '../assets/svg/play.svg';
 import { ReactComponent as Pause } from '../assets/svg/pause.svg';
 
+// redux
+import { IRootState } from '../store';
+import { playingActions } from '../store/playingSlice';
 
-// tymczasowo - dodać redux
-import { Dispatch, SetStateAction } from "react";
+export default function PlayBtn() {
+  // global state
+  const playing = useSelector((state: IRootState) => state.playing.playing);
 
-export default function PlayBtn({ playing, setPlaying }: {playing: boolean, setPlaying: Dispatch<SetStateAction<boolean>>}) {
+  // dispatch functions from slices
+  const dispatch = useDispatch();
+  const setPlaying = (value: boolean) => dispatch(playingActions.setPlaying(value));
+
   return (
     <button
       type="button"
