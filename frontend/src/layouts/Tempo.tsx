@@ -54,27 +54,38 @@ export default function Tempo() {
   };
 
   return (
-    <>
-      <div className="flex">
-        <TempoBtn onClick={() => changeTempo('sub')} icon={<Minus className="w-4" />} />
-        <div>
-          <span>{tempo}</span>
-          <span>BMP</span>
+    <div className="my-6">
+      <h2 className="text-center mb-8">- set tempo -</h2>
+      <div className="grid grid-cols-4">
+
+        <div className="flex items-center justify-center">
+          <TempoBtn onClick={() => changeTempo('sub')} icon={<Minus className="w-6" />} />
         </div>
-        <TempoBtn onClick={() => changeTempo('add')} icon={<Plus className="w-4" />} />
+
+        <div className="col-span-2 flex flex-col items-center justify-center">
+          <div className="text-4xl">{tempo} bpm</div>
+          <div>{description}</div>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <TempoBtn onClick={() => changeTempo('add')} icon={<Plus className="w-6" />} />
+        </div>
+
+        <div className="col-span-4 flex justify-center mt-6">
+          <input
+            type="range"
+            min="20"
+            max="250"
+            value={tempo}
+            step="1"
+            onChange={(event) => setTempo(Number(event.target.value))}
+            className="w-11/12 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+          />
+        </div>
+
       </div>
 
-      <input
-        type="range"
-        min="20"
-        max="250"
-        value={tempo}
-        step="1"
-        onChange={(event) => setTempo(Number(event.target.value))}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-      />
 
-      <div>{description}</div>
-    </>
+    </div>
   );
 }

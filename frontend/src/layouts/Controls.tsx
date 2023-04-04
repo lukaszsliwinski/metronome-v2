@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // components
 import MeasureBtn from '../components/MeasureBtn';
+import PlayBtn from '../components/PlayBtn';
 
 // icons
 import { ReactComponent as Up } from '../assets/svg/up.svg';
@@ -41,17 +42,29 @@ export default function Controls() {
   };
 
   return (
-    <div className="flex justify-around">
-      <div className="flex flex-col w-fit">
-        <MeasureBtn onClick={() => changeBeats('add')} icon={<Up className="w-2"/>} />
-        <MeasureBtn onClick={() => changeBeats('sub')} icon={<Down className="w-2"/>} />
-      </div>
-      <div>{beats} / {notes}</div>
-      <div className="flex flex-col w-fit">
-        <MeasureBtn onClick={() => changeNotes('add')} icon={<Up className="w-2"/>} />
-        <MeasureBtn onClick={() => changeNotes('sub')} icon={<Down className="w-2"/>} />
-      </div>
+    <div className="my-8">
+      <h1 className="mb-6 text-center">- set measure -</h1>
+      <div className="grid grid-cols-4">
 
+        <div className="flex flex-col items-end">
+          <MeasureBtn onClick={() => changeBeats('add')} icon={<Up className="w-3"/>} />
+          <MeasureBtn onClick={() => changeBeats('sub')} icon={<Down className="w-3"/>} />
+        </div>
+
+        <div className="col-span-2 flex justify-center items-center">
+          <div className="text-5xl">{beats} / {notes}</div>
+        </div>
+
+        <div className="flex flex-col">
+          <MeasureBtn onClick={() => changeNotes('add')} icon={<Up className="w-3"/>} />
+          <MeasureBtn onClick={() => changeNotes('sub')} icon={<Down className="w-3"/>} />
+        </div>
+
+        <div className="col-span-4 flex justify-center my-16">
+          <PlayBtn />
+        </div>
+
+      </div>
     </div>
   );
 }

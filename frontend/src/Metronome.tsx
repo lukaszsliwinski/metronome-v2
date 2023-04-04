@@ -6,7 +6,6 @@ import './assets/global.css';
 // components
 import Tempo from './layouts/Tempo';
 import Controls from './layouts/Controls';
-import PlayBtn from './components/PlayBtn';
 
 // import audio files
 import click1 from './assets/audio/click1.mp3';
@@ -66,18 +65,17 @@ export default function Metronome() {
     }
   }, [playing, tempo, beats, notes, counter]);
 
-  // reset counter on every play/apuse click
+  // reset counter on every play/pause click
   useEffect(() => {
     setCounter(1);
   }, [playing]);
 
   return (
-    <div className="min-h-screen-mobile text-sm font-medium dark:bg-gray-800 dark:text-gray-200">
-                    {/* h-fit w-full */}
-      <div className="backdrop-blur-md sm:m-auto sm:max-w-[30rem] sm:rounded-2xl sm:px-6 sm:py-16">
+    <div className="min-h-screen-mobile xs:pt-20 text-sm font-medium dark:bg-gray-800 dark:text-gray-200">
+      <div className="h-fit w-full shadow-xl xs:m-auto xs:max-w-[28rem] xs:rounded-xl px-12">
+        <h1 className="mb-12 text-center text-2xl">Metronome app</h1>
         <Tempo />
         <Controls />
-        <PlayBtn />
         <audio ref={click}></audio>
       </div>
     </div>
