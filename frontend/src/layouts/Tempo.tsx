@@ -54,8 +54,7 @@ export default function Tempo() {
   };
 
   return (
-    <div className="my-6">
-      <h2 className="text-center mb-8">- set tempo -</h2>
+    <div className="my-16">
       <div className="grid grid-cols-4">
 
         <div className="flex items-center justify-center">
@@ -63,7 +62,7 @@ export default function Tempo() {
         </div>
 
         <div className="col-span-2 flex flex-col items-center justify-center">
-          <div className="text-4xl">{tempo} bpm</div>
+          <div className="text-base font-light"><span className="text-5xl">{tempo}</span>&ensp;bpm</div>
           <div>{description}</div>
         </div>
 
@@ -79,7 +78,7 @@ export default function Tempo() {
             value={tempo}
             step="1"
             onChange={(event) => setTempo(Number(event.target.value))}
-            className="w-11/12 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+            className="w-11/12 h-2 accent-lime-800 cursor-pointer"
           />
         </div>
 

@@ -42,8 +42,7 @@ export default function Controls() {
   };
 
   return (
-    <div className="my-8">
-      <h1 className="mb-6 text-center">- set measure -</h1>
+    <div className="my-16">
       <div className="grid grid-cols-4">
 
         <div className="flex flex-col items-end">
@@ -52,7 +51,7 @@ export default function Controls() {
         </div>
 
         <div className="col-span-2 flex justify-center items-center">
-          <div className="text-5xl">{beats} / {notes}</div>
+          <div className="font-light text-4xl mb-2">{beats} / {notes}</div>
         </div>
 
         <div className="flex flex-col">

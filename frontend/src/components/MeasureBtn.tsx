@@ -3,7 +3,8 @@ export default function MeasureBtn({onClick, icon}: {onClick: () => void, icon: 
     <button
       type="button"
       onClick={onClick}
-      className="w-fit text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm my-0.5 px-2.5 py-1 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
+      // className="w-fit text-green-700 hover:text-white border border-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-2.5 py-1 text-center my-0.5 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600"
+      className="w-fit my-0.5 hover:text-lime-700"
     >
       {icon}
     </button>
