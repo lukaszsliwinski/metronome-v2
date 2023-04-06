@@ -42,7 +42,7 @@ export default function Controls() {
   };
 
   return (
-    <div className="my-16">
+    <div className="mt-16">
       <div className="grid grid-cols-4">
 
         <div className="flex flex-col items-end">
@@ -59,7 +59,7 @@ export default function Controls() {
           <MeasureBtn onClick={() => changeNotes('sub')} icon={<Down className="w-3"/>} />
         </div>
 
-        <div className="col-span-4 flex justify-center my-16">
+        <div className="col-span-4 flex justify-center mt-16">
           <PlayBtn />
         </div>
 

@@ -6,6 +6,7 @@ import './assets/global.css';
 // components
 import Tempo from './layouts/Tempo';
 import Controls from './layouts/Controls';
+import About from './layouts/About';
 
 // import audio files
 import click1 from './assets/audio/click1.mp3';
@@ -71,12 +72,13 @@ export default function Metronome() {
   }, [playing]);
 
   return (
-    <div className="min-h-screen-mobile xs:pt-20 text-sm dark:bg-neutral-900 dark:text-gray-200">
-      <div className="h-fit w-full shadow-sm shadow-neutral-800 xs:m-auto xs:max-w-sm xs:rounded-xl px-6">
+    <div className="min-h-screen-mobile pt-2 xs:pt-20 text-sm dark:bg-neutral-900 dark:text-gray-200">
+      <div className="min-h-fit w-full shadow-sm shadow-neutral-800 xs:m-auto xs:max-w-sm xs:rounded-xl px-6">
         <h1 className="mb-12 text-center text-2xl">Metronome app</h1>
         <Tempo />
         <Controls />
         <audio ref={click}></audio>
+        <About />
       </div>
     </div>
   );
