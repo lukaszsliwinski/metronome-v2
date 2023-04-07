@@ -72,8 +72,8 @@ export default function Metronome() {
   }, [playing]);
 
   return (
-    <div className="min-h-screen-mobile pt-2 xs:pt-20 text-sm dark:bg-neutral-900 dark:text-gray-200">
-      <div className="min-h-fit w-full shadow-sm shadow-neutral-800 xs:m-auto xs:max-w-sm xs:rounded-xl px-6">
+    <div className="min-h-screen-mobile pt-2 xs:py-20 text-sm dark:bg-neutral-900 dark:text-gray-200">
+      <div className="min-h-screen-mobile xs:min-h-fit w-full shadow-sm shadow-neutral-800 xs:m-auto xs:max-w-sm xs:rounded-xl px-6">
         <h1 className="mb-12 text-center text-2xl">Metronome app</h1>
         <Tempo />
         <Controls />
