@@ -21,7 +21,7 @@ export default function PlayBtn() {
     <button
       type="button"
       onClick={() => setPlaying(!playing)}
-      className="w-16 h-16 text-lime-500 hover:text-white border border-lime-500 hover:bg-lime-600 font-medium rounded-full text-sm p-2.5 text-center inline-flex justify-center items-center"
+      className="inline-flex h-16 w-16 items-center justify-center rounded-full border border-lime-500 p-2.5 text-center text-sm font-medium text-lime-500 hover:bg-lime-600 hover:text-white"
     >
       {playing ? <Pause className="w-5" /> : <Play className="ml-1 w-6" />}
     </button>

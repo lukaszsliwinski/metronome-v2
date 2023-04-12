@@ -25,15 +25,14 @@ html::-webkit-scrollbar-track {
   background: rgb(23 23 23);
 }
 
-
 /* firefox slider */
-input[type=range]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
   border-radius: 2px;
   height: 14px;
   background: rgb(63 98 18);
 }
 
-input[type=range]::-moz-range-progress {
+input[type='range']::-moz-range-progress {
   height: 8px;
   background: rgb(63 98 18);
 }

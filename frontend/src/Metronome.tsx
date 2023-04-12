@@ -31,10 +31,10 @@ export default function Metronome() {
   // play click function
   const playClick = () => {
     if (click.current) {
-      click.current.src = (counter === 1) ? click1 : click2;
+      click.current.src = counter === 1 ? click1 : click2;
       click.current.play();
-    };
-    (counter === beats) ? setCounter(1) : setCounter(counter + 1);
+    }
+    counter === beats ? setCounter(1) : setCounter(counter + 1);
   };
 
   // Metronome timer based on https://www.youtube.com/watch?v=x8PBWobv6NY
@@ -48,7 +48,7 @@ export default function Metronome() {
       let drift = Date.now() - expected;
       if (drift > interval) {
         console.log('drift error');
-      };
+      }
       playClick();
       expected += interval;
       timeout = setTimeout(round, interval - drift);
@@ -57,8 +57,8 @@ export default function Metronome() {
     // run round function and handle interval change while playing state is true
     if (playing) {
       expected = Date.now() + interval;
-      timeout = setTimeout(round, interval)
-    };
+      timeout = setTimeout(round, interval);
+    }
 
     // stop playing
     if (timeout !== undefined) {
@@ -72,8 +72,8 @@ export default function Metronome() {
   }, [playing]);
 
   return (
-    <div className="min-h-screen-mobile pt-2 xs:py-20 text-sm bg-neutral-900 text-gray-200">
-      <div className="min-h-screen-mobile xs:min-h-fit w-full shadow-sm shadow-neutral-800 xs:m-auto xs:max-w-sm xs:rounded-xl px-6">
+    <div className="min-h-screen-mobile xs:py-20 bg-neutral-900 pt-2 text-sm text-gray-200">
+      <div className="min-h-screen-mobile xs:min-h-fit xs:m-auto xs:max-w-sm xs:rounded-xl w-full px-6 shadow-sm shadow-neutral-800">
         <h1 className="mb-12 text-center text-2xl">Metronome app</h1>
         <Tempo />
         <Controls />

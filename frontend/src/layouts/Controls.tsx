@@ -29,7 +29,7 @@ export default function Controls() {
       setBeats(beats + 1);
     } else if (action === 'sub' && beats > 1) {
       setBeats(beats - 1);
-    };
+    }
   };
 
   // change measure - notes
@@ -38,31 +38,31 @@ export default function Controls() {
       setNotes(notes * 2);
     } else if (action === 'sub' && notes > 1) {
       setNotes(notes / 2);
-    };
+    }
   };
 
   return (
     <div className="mt-16">
       <div className="grid grid-cols-4">
-
         <div className="flex flex-col items-end">
-          <MeasureBtn onClick={() => changeBeats('add')} icon={<Up className="w-3"/>} />
-          <MeasureBtn onClick={() => changeBeats('sub')} icon={<Down className="w-3"/>} />
+          <MeasureBtn onClick={() => changeBeats('add')} icon={<Up className="w-3" />} />
+          <MeasureBtn onClick={() => changeBeats('sub')} icon={<Down className="w-3" />} />
         </div>
 
-        <div className="col-span-2 flex justify-center items-center">
-          <div className="font-light text-4xl mb-2">{beats} / {notes}</div>
+        <div className="col-span-2 flex items-center justify-center">
+          <div className="mb-2 text-4xl font-light">
+            {beats} / {notes}
+          </div>
         </div>
 
         <div className="flex flex-col">
-          <MeasureBtn onClick={() => changeNotes('add')} icon={<Up className="w-3"/>} />
-          <MeasureBtn onClick={() => changeNotes('sub')} icon={<Down className="w-3"/>} />
+          <MeasureBtn onClick={() => changeNotes('add')} icon={<Up className="w-3" />} />
+          <MeasureBtn onClick={() => changeNotes('sub')} icon={<Down className="w-3" />} />
         </div>
 
-        <div className="col-span-4 flex justify-center mt-16">
+        <div className="col-span-4 mt-16 flex justify-center">
           <PlayBtn />
         </div>
-
       </div>
     </div>
   );
