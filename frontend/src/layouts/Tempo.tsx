@@ -27,7 +27,6 @@ export default function Tempo() {
   // set description when tempo changes
   useEffect(() => {
     [
-      [20, 39, 'Grave'],
       [40, 44, 'Lento'],
       [45, 54, 'Largo'],
       [55, 64, 'Adagio'],
@@ -36,9 +35,7 @@ export default function Tempo() {
       [86, 97, 'Moderato'],
       [98, 108, 'Allegretto'],
       [109, 131, 'Allegro'],
-      [132, 167, 'Vivace'],
-      [168, 177, 'Presto'],
-      [178, 250, 'Prestissimo']
+      [132, 140, 'Vivace']
     ].forEach((item) => {
       if (tempo >= Number(item[0]) && tempo <= Number(item[1])) setDescription(String(item[2]));
     });
@@ -46,9 +43,9 @@ export default function Tempo() {
 
   // change tempo
   const changeTempo = (action: 'add' | 'sub') => {
-    if (action === 'add' && tempo < 250) {
+    if (action === 'add' && tempo < 140) {
       setTempo(tempo + 1);
-    } else if (action === 'sub' && tempo > 20) {
+    } else if (action === 'sub' && tempo > 40) {
       setTempo(tempo - 1);
     }
   };
@@ -74,8 +71,8 @@ export default function Tempo() {
         <div className="col-span-4 mt-6 flex justify-center">
           <input
             type="range"
-            min="20"
-            max="250"
+            min="40"
+            max="140"
             value={tempo}
             step="1"
             onChange={(event) => setTempo(Number(event.target.value))}

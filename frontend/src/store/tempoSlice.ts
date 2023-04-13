@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const tempoSlice = createSlice({
   name: 'tempo',
   initialState: {
-    tempo: 135
+    tempo: 90
   },
   reducers: {
     setTempo(state, action) {
