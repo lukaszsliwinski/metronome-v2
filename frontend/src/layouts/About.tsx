@@ -8,7 +8,7 @@ export default function About() {
         <br />
         The application is a&nbsp;simulation of a&nbsp;musical metronome. You can set different
         meters and tempos and change them while playing the metronome. Read more about me and see my
-        other web apps with source codes at:
+        other apps with source codes at:
         <br />
       </p>
       <a
