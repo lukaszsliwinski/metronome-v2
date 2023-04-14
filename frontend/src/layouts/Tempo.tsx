@@ -15,7 +15,7 @@ import { tempoActions } from '../store/tempoSlice';
 
 export default function Tempo() {
   // local state
-  const [description, setDescription] = useState('Vivace');
+  const [description, setDescription] = useState('Moderato');
 
   // global state
   const tempo = useSelector((state: IRootState) => state.tempo.tempo);
