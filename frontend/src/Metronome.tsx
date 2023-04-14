@@ -66,10 +66,10 @@ export default function Metronome() {
     }
   }, [playing, tempo, beats, notes, counter]);
 
-  // reset counter on every play/pause click
+  // reset counter on every play/pause click and measure change
   useEffect(() => {
     setCounter(1);
-  }, [playing]);
+  }, [playing, beats, notes]);
 
   return (
     <div className="min-h-screen-mobile xs:py-20 bg-neutral-900 pt-2 text-sm text-gray-200">
