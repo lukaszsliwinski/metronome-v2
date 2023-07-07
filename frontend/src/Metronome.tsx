@@ -1,19 +1,17 @@
 // imports
-import { useState, useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './assets/global.css';
 
 // components
+import Diode from './layouts/Diode';
 import Tempo from './layouts/Tempo';
 import Controls from './layouts/Controls';
 import About from './layouts/About';
 
-// import audio files
-import click1 from './assets/audio/click1.mp3';
-import click2 from './assets/audio/click2.mp3';
-
 // redux
 import { IRootState } from './store';
+import { modeActions } from './store/modeSlice';
 
 export default function Metronome() {
   // local state
@@ -24,16 +22,15 @@ export default function Metronome() {
   const beats = useSelector((state: IRootState) => state.measure.beats);
   const notes = useSelector((state: IRootState) => state.measure.notes);
   const playing = useSelector((state: IRootState) => state.playing.playing);
+  const mode = useSelector((state: IRootState) => state.mode.mode);
 
-  // ref to audio element
-  let click = useRef<HTMLAudioElement>(null);
+  // dispatch functions from slices
+  const dispatch = useDispatch();
+  const setMode = (value: 'off' | 'red' | 'green') => dispatch(modeActions.setMode(value));
 
   // play click function
-  const playClick = () => {
-    if (click.current) {
-      click.current.src = counter === 1 ? click1 : click2;
-      click.current.play();
-    }
+  const runMetronome = () => {
+    counter === 1 ? setMode('red') : setMode('green');
     counter === beats ? setCounter(1) : setCounter(counter + 1);
   };
 
@@ -49,7 +46,7 @@ export default function Metronome() {
       if (drift > interval) {
         console.log('drift error');
       }
-      playClick();
+      runMetronome();
       expected += interval;
       timeout = setTimeout(round, interval - drift);
     };
@@ -75,9 +72,9 @@ export default function Metronome() {
     <div className="min-h-screen-mobile xs:py-20 bg-neutral-900 pt-2 text-sm text-gray-200">
       <div className="min-h-screen-mobile xs:min-h-fit xs:m-auto xs:max-w-sm xs:rounded-xl w-full px-6 shadow-sm shadow-neutral-800">
         <h1 className="mb-12 text-center text-2xl">Metronome app</h1>
+        <Diode />
         <Tempo />
         <Controls />
-        <audio ref={click}></audio>
         <About />
       </div>
     </div>

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // components
 import MeasureBtn from '../components/MeasureBtn';
-import PlayBtn from '../components/PlayBtn';
+import StartBtn from '../components/StartBtn';
 
 // icons
 import { ReactComponent as Up } from '../assets/svg/up.svg';
@@ -61,7 +61,7 @@ export default function Controls() {
         </div>
 
         <div className="col-span-4 mt-16 flex justify-center">
-          <PlayBtn />
+          <StartBtn />
         </div>
       </div>
     </div>
