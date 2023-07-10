@@ -1,6 +1,7 @@
 // imports
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import '../assets/css/diode.css';
 
 // redux
 import { IRootState } from '../store';
@@ -20,9 +21,9 @@ export default function Diode() {
   // set light color and turn off after 100ms
   useEffect(() => {
     if (mode === 'red') {
-      setColor('bg-red-500');
+      setColor('bg-red-600 diode-red-shadow');
     } else if (mode === 'green') {
-      setColor('bg-green-500');
+      setColor('bg-lime-400 diode-green-shadow');
     } else {
       setColor('bg-slate-700');
     }
@@ -32,9 +33,7 @@ export default function Diode() {
 
   return (
     <div className="flex w-full justify-center">
-      <div className="mx-1 inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-slate-700">
-        <div className={`${color} h-14 w-14 rounded-full`}></div>
-      </div>
+      <div className={`mx-1 h-14 w-14 rounded-full ${color}`}></div>
     </div>
   );
 }

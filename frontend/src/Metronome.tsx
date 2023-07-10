@@ -1,7 +1,7 @@
 // imports
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import './assets/global.css';
+import './assets/css/global.css';
 
 // components
 import Diode from './layouts/Diode';
