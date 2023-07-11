@@ -32,16 +32,15 @@ describe('Metronome', () => {
     const addTempoBtn = screen.findByRole('button', { name: /add-tempo/i });
     const subTempoBtn = screen.findByRole('button', { name: /sub-tempo/i });
 
-
-    fireEvent.change(screen.getByRole('slider'), { target: { value: 140 }});
+    fireEvent.change(screen.getByRole('slider'), { target: { value: 140 } });
     user.click(await addTempoBtn);
     expect(screen.getByText(/140/i)).toBeInTheDocument();
 
-    fireEvent.change(screen.getByRole('slider'), { target: { value: 40 }});
+    fireEvent.change(screen.getByRole('slider'), { target: { value: 40 } });
     user.click(await subTempoBtn);
     expect(screen.getByText(/40/i)).toBeInTheDocument();
 
-    fireEvent.change(screen.getByRole('slider'), { target: { value: 109 }});
+    fireEvent.change(screen.getByRole('slider'), { target: { value: 109 } });
     expect(screen.getByText(/allegro/i)).toBeInTheDocument();
 
     user.click(await addTempoBtn);
@@ -50,7 +49,6 @@ describe('Metronome', () => {
     waitFor(() => {
       expect(screen.findByText(/allegretto/i)).toBeInTheDocument();
     });
-
 
     // simulate user changing measure
     const addBeatBtn = screen.findByRole('button', { name: /add-beat/i });
@@ -72,7 +70,7 @@ describe('Metronome', () => {
     user.click(await subNoteBtn);
 
     user.click(await addNoteBtn);
-    
+
     waitFor(() => {
       expect(screen.getByText('3 / 8')).toBeInTheDocument();
     });

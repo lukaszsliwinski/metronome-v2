@@ -54,7 +54,11 @@ export default function Tempo() {
     <div className="my-16">
       <div className="grid grid-cols-4">
         <div className="flex items-center justify-center">
-          <TempoBtn name="sub-tempo" onClick={() => changeTempo('sub')} icon={<Minus className="w-6" />} />
+          <TempoBtn
+            name="sub-tempo"
+            onClick={() => changeTempo('sub')}
+            icon={<Minus className="w-6" />}
+          />
         </div>
 
         <div className="col-span-2 flex flex-col items-center justify-center">
@@ -65,7 +69,11 @@ export default function Tempo() {
         </div>
 
         <div className="flex items-center justify-center">
-          <TempoBtn name="add-tempo" onClick={() => changeTempo('add')} icon={<Plus className="w-6" />} />
+          <TempoBtn
+            name="add-tempo"
+            onClick={() => changeTempo('add')}
+            icon={<Plus className="w-6" />}
+          />
         </div>
 
         <div className="col-span-4 mt-6 flex justify-center">
