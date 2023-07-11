@@ -33,7 +33,7 @@ export default function Diode() {
 
   return (
     <div className="flex w-full justify-center">
-      <div className={`mx-1 h-14 w-14 rounded-full ${color}`}></div>
+      <div className={`h-14 w-14 rounded-full ${color}`}></div>
     </div>
   );
 }
