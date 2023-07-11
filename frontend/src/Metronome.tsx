@@ -27,7 +27,7 @@ export default function Metronome() {
   const dispatch = useDispatch();
   const setMode = (value: 'off' | 'red' | 'green') => dispatch(modeActions.setMode(value));
 
-  // play click function
+  // run metronome function
   const runMetronome = () => {
     counter === 1 ? setMode('red') : setMode('green');
     counter === beats ? setCounter(1) : setCounter(counter + 1);
@@ -39,7 +39,7 @@ export default function Metronome() {
     let interval = 240000 / tempo / notes;
     let expected = Date.now() + interval;
 
-    // run click function in loop and adjust the time
+    // run metronome function in loop and adjust the time
     const round = () => {
       let drift = Date.now() - expected;
       if (drift > interval) {
