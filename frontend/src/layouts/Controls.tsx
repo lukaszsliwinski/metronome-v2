@@ -45,8 +45,8 @@ export default function Controls() {
     <div className="mt-16">
       <div className="grid grid-cols-4">
         <div className="flex flex-col items-end">
-          <MeasureBtn onClick={() => changeBeats('add')} icon={<Up className="w-3" />} />
-          <MeasureBtn onClick={() => changeBeats('sub')} icon={<Down className="w-3" />} />
+          <MeasureBtn name="add-beat" onClick={() => changeBeats('add')} icon={<Up className="w-3" />} />
+          <MeasureBtn name="sub-beat" onClick={() => changeBeats('sub')} icon={<Down className="w-3" />} />
         </div>
 
         <div className="col-span-2 flex items-center justify-center">
@@ -56,8 +56,8 @@ export default function Controls() {
         </div>
 
         <div className="flex flex-col">
-          <MeasureBtn onClick={() => changeNotes('add')} icon={<Up className="w-3" />} />
-          <MeasureBtn onClick={() => changeNotes('sub')} icon={<Down className="w-3" />} />
+          <MeasureBtn name="add-note" onClick={() => changeNotes('add')} icon={<Up className="w-3" />} />
+          <MeasureBtn name="sub-note" onClick={() => changeNotes('sub')} icon={<Down className="w-3" />} />
         </div>
 
         <div className="col-span-4 mt-16 flex justify-center">

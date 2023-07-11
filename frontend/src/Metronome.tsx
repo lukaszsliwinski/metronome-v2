@@ -22,7 +22,6 @@ export default function Metronome() {
   const beats = useSelector((state: IRootState) => state.measure.beats);
   const notes = useSelector((state: IRootState) => state.measure.notes);
   const playing = useSelector((state: IRootState) => state.playing.playing);
-  const mode = useSelector((state: IRootState) => state.mode.mode);
 
   // dispatch functions from slices
   const dispatch = useDispatch();

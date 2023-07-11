@@ -1,6 +1,8 @@
-export default function MeasureBtn({ onClick, icon }: { onClick: () => void; icon: JSX.Element }) {
+import { IBtn } from '../types';
+
+export default function MeasureBtn({ onClick, icon, name }: IBtn) {
   return (
-    <button type="button" onClick={onClick} className="my-0.5 w-fit hover:text-lime-700">
+    <button role="button" aria-label={name} onClick={onClick} className="my-0.5 w-fit hover:text-lime-700">
       {icon}
     </button>
   );
