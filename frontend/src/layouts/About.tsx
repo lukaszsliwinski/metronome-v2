@@ -14,6 +14,7 @@ export default function About() {
       <a
         href="https://portfolio.lukaszsliwinski.pl"
         className="w-100 mt-4 block cursor-pointer text-center text-xs font-bold underline underline-offset-2 hover:text-lime-700"
+        target="_blank"
       >
         www.portfolio.lukaszsliwinski.pl
       </a>
