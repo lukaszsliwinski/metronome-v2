@@ -12,10 +12,10 @@ export default function About() {
         <br />
       </p>
       <a
-        href="https://lukaszsliwinski.pl"
-        className="w-100 mt-1 block cursor-pointer text-center text-sm font-bold underline underline-offset-2 hover:text-lime-700"
+        href="https://portfolio.lukaszsliwinski.pl"
+        className="w-100 mt-4 block cursor-pointer text-center text-xs font-bold underline underline-offset-2 hover:text-lime-700"
       >
-        www.lukaszsliwinski.pl
+        www.portfolio.lukaszsliwinski.pl
       </a>
     </div>
   );
