@@ -1,0 +1,8 @@
+/* diode light shadow */
+.diode-green-shadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 7px 1px, inset #304701 0 0 9px, #89ff00 0 0 12px;
+}
+
+.diode-red-shadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 7px 1px, inset #441313 0 0 9px, #f00 0 0 12px;
+}
