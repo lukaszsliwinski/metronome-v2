@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './assets/css/global.css';
 
-// components
+// components4
+import Card from './components/Card';
+import Header from './layouts/Header';
 import Diode from './layouts/Diode';
 import Tempo from './layouts/Tempo';
 import Controls from './layouts/Controls';
@@ -68,13 +70,27 @@ export default function Metronome() {
   }, [playing, beats, notes]);
 
   return (
-    <div className="min-h-screen-mobile xs:py-20 bg-neutral-900 pt-2 text-sm text-gray-200">
-      <div className="min-h-screen-mobile xs:min-h-fit xs:m-auto xs:max-w-sm xs:rounded-xl w-full px-6 shadow-sm shadow-neutral-800">
-        <h1 className="mb-12 text-center text-2xl">Metronome app</h1>
-        <Diode />
-        <Tempo />
-        <Controls />
-        <About />
+    <div className="min-h-screen-mobile bg-slate-100 p-2">
+      <div className="min-h-screen-mobile xs:min-h-fit xs:m-auto xs:max-w-sm w-full">
+        <Card position="top">
+          <Header />
+        </Card>
+
+        <Card>
+          <Diode />
+        </Card>
+
+        <Card>
+          <Tempo />
+        </Card>
+
+        <Card>
+          <Controls />
+        </Card>
+
+        <Card position="bottom">
+          <About />
+        </Card>
       </div>
     </div>
   );

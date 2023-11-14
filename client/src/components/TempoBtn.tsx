@@ -6,7 +6,7 @@ export default function TempoBtn({ onClick, icon, name }: IBtn) {
       role="button"
       aria-label={name}
       onClick={onClick}
-      className="hover:text-lime-700"
+      className="rounded-lg border border-slate-300 p-2 hover:bg-slate-300 hover:text-slate-900"
     >
       {icon}
     </button>

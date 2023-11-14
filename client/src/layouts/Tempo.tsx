@@ -51,8 +51,8 @@ export default function Tempo() {
   };
 
   return (
-    <div className="my-16">
-      <div className="grid grid-cols-4">
+    <div className="flex h-48 w-full items-center justify-center">
+      <div className="grid w-full grid-cols-4">
         <div className="flex items-center justify-center">
           <TempoBtn
             name="sub-tempo"

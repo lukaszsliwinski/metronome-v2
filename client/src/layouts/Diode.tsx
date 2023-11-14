@@ -32,8 +32,8 @@ export default function Diode() {
   }, [mode]);
 
   return (
-    <div className="flex w-full justify-center">
-      <div className={`h-14 w-14 rounded-full ${color}`}></div>
+    <div className="flex h-32 w-full items-center justify-center">
+      <div className={`h-20 w-20 rounded-full ${color}`}></div>
     </div>
   );
 }

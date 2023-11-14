@@ -42,16 +42,18 @@ export default function Controls() {
   };
 
   return (
-    <div className="mt-16">
-      <div className="grid grid-cols-4">
-        <div className="flex flex-col items-end">
+    <div className="flex h-48 w-full items-center justify-center">
+      <div className="grid w-full grid-cols-4">
+        <div className="flex flex-col items-center">
           <MeasureBtn
             name="add-beat"
+            position="top"
             onClick={() => changeBeats('add')}
             icon={<Up className="w-3" />}
           />
           <MeasureBtn
             name="sub-beat"
+            position="bottom"
             onClick={() => changeBeats('sub')}
             icon={<Down className="w-3" />}
           />
@@ -63,20 +65,22 @@ export default function Controls() {
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
           <MeasureBtn
             name="add-note"
+            position="top"
             onClick={() => changeNotes('add')}
             icon={<Up className="w-3" />}
           />
           <MeasureBtn
             name="sub-note"
+            position="bottom"
             onClick={() => changeNotes('sub')}
             icon={<Down className="w-3" />}
           />
         </div>
 
-        <div className="col-span-4 mt-16 flex justify-center">
+        <div className="col-span-4 mt-8 flex justify-center">
           <StartBtn />
         </div>
       </div>
