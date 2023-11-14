@@ -10,7 +10,7 @@ export default function Card({
   return (
     <div
       className={`
-      shadow-mg my-1 rounded border border-slate-300 bg-slate-200 text-sm tracking-widest text-slate-900
+      my-1.5 rounded border border-slate-200 bg-slate-100 text-sm tracking-widest text-slate-900 shadow
       ${position === 'top' ? 'rounded-t-[3rem] rounded-b' : ''}
       ${position === 'bottom' ? 'rounded-b-[3rem] rounded-t' : ''}
     `}

@@ -25,7 +25,7 @@ export default function Diode() {
     } else if (mode === 'green') {
       setColor('bg-lime-400 diode-green-shadow');
     } else {
-      setColor('bg-slate-700');
+      setColor('bg-slate-200');
     }
 
     if (mode !== 'off') setTimeout(() => setMode('off'), 100);

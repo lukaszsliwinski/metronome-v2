@@ -7,7 +7,7 @@ export default function MeasureBtn({ onClick, icon, name, position }: IBtn) {
       aria-label={name}
       onClick={onClick}
       className={`
-        my-px w-fit border border-slate-300 px-3.5 hover:bg-slate-300 hover:text-slate-900
+        my-px w-fit bg-white px-3.5 shadow-lg active:shadow-sm
         ${position === 'top' ? ' rounded-t-lg' : 'rounded-b-lg'}
       `}
     >

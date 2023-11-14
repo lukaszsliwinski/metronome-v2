@@ -4,7 +4,7 @@
 
 /* scrollbar */
 html {
-  scrollbar-color: rgb(77 124 15) rgb(23 23 23);
+  scrollbar-color: #475569 transparent;
   scrollbar-width: thin;
   scroll-behavior: smooth;
 }
@@ -14,25 +14,21 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: rgb(77 124 15);
-}
-
-html::-webkit-scrollbar-thumb:hover {
-  background: rgb(63 98 18);
+  background: #475569;
 }
 
 html::-webkit-scrollbar-track {
-  background: rgb(23 23 23);
+  background: transparent;
 }
 
 /* firefox slider */
 input[type='range']::-moz-range-thumb {
   border-radius: 2px;
   height: 14px;
-  background: rgb(63 98 18);
+  background: #475569;
 }
 
 input[type='range']::-moz-range-progress {
   height: 8px;
-  background: rgb(63 98 18);
+  background: #475569;
 }

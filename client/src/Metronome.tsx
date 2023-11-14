@@ -70,7 +70,7 @@ export default function Metronome() {
   }, [playing, beats, notes]);
 
   return (
-    <div className="min-h-screen-mobile bg-slate-100 p-2">
+    <div className="min-h-screen-mobile p-2">
       <div className="min-h-screen-mobile xs:min-h-fit xs:m-auto xs:max-w-sm w-full">
         <Card position="top">
           <Header />

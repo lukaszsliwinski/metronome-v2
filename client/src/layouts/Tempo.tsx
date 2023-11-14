@@ -84,7 +84,7 @@ export default function Tempo() {
             value={tempo}
             step="1"
             onChange={(event) => setTempo(Number(event.target.value))}
-            className="h-2 w-11/12 cursor-pointer accent-lime-800"
+            className="h-2 w-11/12 cursor-pointer accent-slate-600"
           />
         </div>
       </div>

@@ -17,7 +17,7 @@ export default function PlayBtn() {
     <button
       type="button"
       onClick={() => setPlaying(!playing)}
-      className="inline-flex h-10 w-24 items-center justify-center rounded-lg border border-lime-500 p-2.5 text-center text-lg font-medium text-lime-500 hover:bg-lime-600 hover:text-white"
+      className="inline-flex h-10 w-24 items-center justify-center rounded-lg bg-white p-2.5 text-center text-lg font-medium shadow-lg active:shadow-sm"
     >
       {playing ? 'STOP' : 'START'}
     </button>
