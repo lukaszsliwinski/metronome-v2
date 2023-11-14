@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "Lightning Metronome",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,8 +13,6 @@
     "@types/react-dom": "^18.0.0",
     "@types/react-redux": "^7.1.25",
     "cra-template-typescript": "1.2.0",
-    "flowbite": "^1.6.4",
-    "flowbite-react": "^0.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",

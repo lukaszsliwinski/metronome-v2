@@ -14,6 +14,5 @@ module.exports = {
         'screen-mobile': 'calc(var(--vh, 1vh) * 100)'
       }
     }
-  },
-  plugins: [require('flowbite/plugin')]
+  }
 };
